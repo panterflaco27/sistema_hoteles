@@ -28,3 +28,8 @@ para la conexion de la base de datos es necesario tener lo siguiente:
     usuario con privilegios en la base de datos
     contraseña del usuario (este puede ser encriptado usando un script para mayor seguridad)
 
+para hacer las migraciones a la base de datos hay dos formas, una es eliminando todo lo que ya esta:
+    php artisan migrate:fresh
+
+o modificando la que ya existe, pero puede haber errores si es que se cambia el contenido de la tabla:
+    php artisan migrate
