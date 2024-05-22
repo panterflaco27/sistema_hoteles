@@ -4,7 +4,10 @@ para correrlo localmente se debe de tener instalado lo siguiente:
     nodejs (10+)
     xampp o laragon para levantar el servicio de apache (yo uso xampp)
 
-para levantar el servidcio se debe generar primero el archivo .env con el siguiente comando:
+antes de levantarlo, ejecutar el siguiente comando:
+    composer install
+para que instale todas las dependencias que requiere el proyecto
+para levantar el servicio se debe generar primero el archivo .env con el siguiente comando:
     php artisan key:generate
 
 en caso de tener el .env.example, copiarlo en un archivo .env y ejecutar el mismo comando
