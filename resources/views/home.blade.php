@@ -3,21 +3,22 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+        <h1>hoteles disponibles</h1>
+        @foreach($hoteles as $hotel)
+            @if($hotel->nombre === 'Hotel Vista Alegre')
+                <a href='/hotelVA'>
+            @elseif($hotel->nombre === 'Hotel Buena Vista')
+                <a href='/hotelBV'>
+            @elseif($hotel->nombre === 'Hotel Costa del Mar')
+                <a href='/hotelCM'>
+            @endif
+                <li>
+                    <strong>{{ $hotel->nombre }}</strong><br>
+                    Dirección: {{ $hotel->direccion }} <br>
+                    Número de habitaciones: {{ $hotel->Nhabitaciones }}
+                </li>
+            </a>
+        @endforeach
     </div>
 </div>
 @endsection
