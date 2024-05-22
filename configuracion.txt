@@ -1,0 +1,30 @@
+para correrlo localmente se debe de tener instalado lo siguiente:
+    composer
+    php 8.2
+    nodejs (10+)
+
+para levantar el servidcio se debe generar primero el archivo .env con el siguiente comando:
+    php artisan key:generate
+
+en caso de tener el .env.example, copiarlo en un archivo .env y ejecutar el mismo comando
+
+para levantrar el ui de bootstrap:
+    npm run dev
+
+en caso de que no funcione, usar lo siguiente
+
+npm install && nom run dev 
+
+y despues volver a ejecutar run dev si no funciona
+
+(si se usa powershell, se debe escribir asi (npm install) -and (npm run dev))
+
+para la conexion de la base de datos es necesario tener lo siguiente:
+
+    tipo de conexion
+    host
+    puerto
+    nombre de la base de datos
+    usuario con privilegios en la base de datos
+    contraseña del usuario (este puede ser encriptado usando un script para mayor seguridad)
+
