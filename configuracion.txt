@@ -2,6 +2,7 @@ para correrlo localmente se debe de tener instalado lo siguiente:
     composer
     php 8.2
     nodejs (10+)
+    xampp o laragon para levantar el servicio de apache (yo uso xampp)
 
 para levantar el servidcio se debe generar primero el archivo .env con el siguiente comando:
     php artisan key:generate
