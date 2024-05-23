@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('hotel_id')->constrained('hoteles')->onDelete('cascade');
             $table->string('tipo');
+            $table->integer('numero');
             $table->boolean('disponible')->default(true);
+            $table->integer('capacidad');
             $table->decimal('precio', 8, 2);
             $table->timestamps();
         });

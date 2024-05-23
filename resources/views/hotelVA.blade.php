@@ -11,6 +11,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <h5>Tipo: {{ $habitacion->tipo }}</h5>
+                        <p>Número de habitación: {{ $habitacion->numero }}</p>
                         <p>Disponible: {{ $habitacion->disponible ? 'Sí' : 'No' }}</p>
                         <p>Precio: ${{ $habitacion->precio }}</p>
                     </div>
@@ -21,21 +22,6 @@
                     @endif
                 </div>
             </li>
-                <!--li>
-                    <li class="{{ $habitacion->disponible ? 'disponible' : 'no-disponible' }}">
-                    Tipo: {{ $habitacion->tipo }}<br>
-                    Disponible: {{ $habitacion->disponible ? 'Sí' : 'No' }}<br>
-                    Precio: ${{ $habitacion->precio }}
-                </li>
-                <style>
-                    .disponible {
-                        color: green;
-                    }
-                
-                    .no-disponible {
-                        color: red;
-                    }
-                </style-->
             @endforeach
         </ul>
     </div>
