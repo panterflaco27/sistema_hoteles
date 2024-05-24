@@ -86,3 +86,5 @@ INSERT INTO habitaciones (hotel_id, tipo, numero, disponible, capacidad, precio)
 (3, 'suite', 20, 1, 8, 1500);
 
 select * from habitaciones;
+
+select * from reservaciones;
