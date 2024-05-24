@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth', 'verified']], function (){
 
     //rutas de recarga de dinero
     Route::get('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera');
-    Route::post('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera.submit');
+    Route::post('recargar-cartera', 'App\Http\Controllers\recargaController@actualizarFondos')->name('home');
 
 });
 

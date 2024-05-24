@@ -44,5 +44,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
+    public function updateFondos($amount)
+    {
+        $newFondos = $this->fondos + $amount;
+        $this->fondos = $newFondos; // Actualiza el atributo 'fondos'
+        $this->save(); // Guarda los cambios en la base de datos
+    }
     
 }

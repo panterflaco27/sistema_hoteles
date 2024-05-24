@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Recargar Cartera</div>
                 <div class="card-body">
-                    <form action="{{route('recargar-cartera.submit')}}" method="post">
+                    <form action="{{route('recargar-cartera')}}" method="post">
                         @csrf
                         <div class="form-group row">
                             <label for="monto" class="col-md-4 col-form-label text-md-right">Monto a recargar:</label>
