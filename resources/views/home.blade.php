@@ -6,11 +6,11 @@
         <h1>hoteles disponibles</h1>
         @foreach($hoteles as $hotel)
             @if($hotel->nombre === 'Hotel Vista Alegre')
-                <a href='/hotelVA'>
+                <a href="{{ route('hotel.habitaciones', ['hotel_id' => $hotel->id]) }}">
             @elseif($hotel->nombre === 'Hotel Buena Vista')
-                <a href='/hotelBV'>
+                <a href="{{ route('hotel.habitaciones', ['hotel_id' => $hotel->id]) }}">
             @elseif($hotel->nombre === 'Hotel Costa del Mar')
-                <a href='/hotelCM'>
+                <a href="{{ route('hotel.habitaciones', ['hotel_id' => $hotel->id]) }}">
             @endif
                 <li>
                     <strong>{{ $hotel->nombre }}</strong><br>
