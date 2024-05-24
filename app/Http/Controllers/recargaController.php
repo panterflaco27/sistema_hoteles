@@ -15,6 +15,7 @@ class recargaController extends Controller
 
     public function recargar(Request $request)
     {
+        /** @var \App\Models\User $user **/
         $user = auth()->user();
         $user->fondos += $request->input('monto');
         $user->save();

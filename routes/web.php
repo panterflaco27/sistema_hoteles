@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HotelController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth', 'verified']], function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//rutas de recarga de dinero
-Route::get('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera');
-Route::post('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera.submit');
+    //rutas de recarga de dinero
+    Route::get('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera');
+    Route::post('recargar-cartera', 'App\Http\Controllers\recargaController@showform')->name('recargar-cartera.submit');
+
+});
 
 //rutas para las habitaciones
 Route::get('/hotelVA',[HotelController::class, 'mostrarHabitaciones'])->name('hotelVA')->defaults('hotelId',1);
